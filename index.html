@@ -48,6 +48,11 @@
 
     <!-- Fonts -->
     <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600&display=swap"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
@@ -88,6 +93,7 @@
 
     <!-- Custom -->
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="/assets/icon.png" type="image/x-icon">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -99,6 +105,14 @@
         "url": "https://www.partycruisers.com/",
         "logo": "https://www.partycruisers.com/logo.png",
         "foundingDate": "1994",
+        "telephone": "+91-22-40048888",
+        "email": "events@partycruisers.com",
+        "sameAs": [
+          "https://www.instagram.com/partycruisers",
+          "https://www.facebook.com/partycruisers",
+          "https://www.linkedin.com/company/partycruisers",
+          "https://www.youtube.com/partycruisers"
+        ],
         "areaServed": [
           "Mumbai",
           "Hyderabad",
@@ -124,6 +138,8 @@
   </head>
 
   <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
     <!-- ============ PRELOADER ============ -->
     <div id="preloader" aria-hidden="true">
       <div class="preloader-inner">
@@ -180,9 +196,9 @@
       </nav>
     </header>
 
-    <main>
+    <main id="main">
       <!-- ============ SECTION 1 · CINEMATIC HERO ============ -->
-      <section id="hero" class="hero">
+      <section id="hero" class="hero" aria-label="Introduction and consultation form">
         <div class="hero-media">
           <img
             src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1920&q=80"
@@ -247,12 +263,12 @@
             <div class="col-lg-5">
               <div class="hero-form-card glass" data-hero="8" id="hero-form">
                 <p class="form-eyebrow">Private Consultation</p>
-                <h2 class="form-title">Plan My Event</h2>
+                <h3 class="form-title">Plan My Event</h3>
                 <p class="form-note">
                   Share your details. A specialist will craft a bespoke
                   proposal.
                 </p>
-                <form class="luxe-form" novalidate data-form="hero" id="ajax-header-contact">
+                <form class="luxe-form" method="post" novalidate data-form="hero" id="ajax-header-contact">
                   <div class="field">
                     <input
                       type="text"
@@ -311,7 +327,7 @@
       </section>
 
       <!-- ============ SECTION 2 · EXPERIENCE & TRUST ============ -->
-      <section id="trust" class="trust section-pad-dark">
+      <section id="trust" class="trust section-pad-dark" aria-label="Our legacy and track record">
         <div class="container-xxl">
           <div class="section-head text-center" data-aos="fade-up">
             <span class="luxe-label gold">A Legacy of Excellence</span>
@@ -351,7 +367,7 @@
       </section>
 
       <!-- ============ SECTION 3 · PRIME PRESENCE & GLOBAL REACH ============ -->
-      <section id="presence" class="presence section-pad">
+      <section id="presence" class="presence section-pad" aria-label="Locations and global reach">
         <div class="container-xxl">
           <div class="row g-5 align-items-center">
             <div class="col-lg-5" data-aos="fade-right">
@@ -486,7 +502,7 @@
       </section>
 
       <!-- ============ SECTION 4 · OUR OFFERINGS ============ -->
-      <section id="offerings" class="offerings section-pad-light">
+      <section id="offerings" class="offerings section-pad-light" aria-label="Our services and offerings">
         <div class="container-xxl">
           <div class="section-head text-center" data-aos="fade-up">
             <span class="luxe-label gold">Our Offerings</span>
@@ -596,7 +612,7 @@
       </section>
 
       <!-- ============ SECTION 5 · WORLD CLASS EXPERTISE ============ -->
-      <section id="expertise" class="expertise">
+      <section id="expertise" class="expertise" aria-label="World-class expertise">
         <div class="expertise-split">
           <div class="expertise-visual" data-aos="fade-right">
             <img
@@ -657,7 +673,7 @@
       </section>
 
       <!-- ============ SECTION 6 · WHY CHOOSE PARTY CRUISERS ============ -->
-      <section id="why" class="why section-pad-light">
+      <section id="why" class="why section-pad-light" aria-label="Why choose Party Cruisers">
         <div class="container-xxl">
           <div class="section-head text-center" data-aos="fade-up">
             <span class="luxe-label gold">Why Party Cruisers</span>
@@ -710,7 +726,7 @@
       </section>
 
       <!-- ============ SECTION 7 · PREMIUM EVENT GALLERY ============ -->
-      <section id="gallery" class="gallery section-pad-dark">
+      <section id="gallery" class="gallery section-pad-dark" aria-label="Event gallery">
         <div class="container-xxl">
           <div class="section-head text-center" data-aos="fade-up">
             <span class="luxe-label gold">Premium Gallery</span>
@@ -825,6 +841,8 @@
                 loading="lazy"
                 src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"
                 alt="Stage performance"
+                width="800"
+                height="560"
               />
               <figcaption>
                 <span>Entertainment</span><i class="fa-solid fa-expand"></i>
@@ -835,7 +853,7 @@
       </section>
 
       <!-- ============ SECTION 8 · TESTIMONIALS ============ -->
-      <section id="testimonials" class="testimonials section-pad">
+      <section id="testimonials" class="testimonials section-pad" aria-label="Client testimonials">
         <div class="container-xxl">
           <div class="section-head text-center" data-aos="fade-up">
             <span class="luxe-label gold">Distinguished Voices</span>
@@ -903,7 +921,7 @@
       </section>
 
       <!-- ============ SECTION 9 · HIGH-CONVERSION CTA ============ -->
-      <section id="cta" class="final-cta">
+      <section id="cta" class="final-cta" aria-label="Book your consultation">
         <div class="cta-overlay"></div>
         <div class="container-xxl cta-inner text-center" data-aos="zoom-in">
           <span class="gold-line"></span>
@@ -1046,6 +1064,8 @@
               loading="lazy"
               src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=80"
               alt="Party Cruisers luxury event"
+              width="700"
+              height="800"
             />
             <div class="popup-brand">
               <span class="popup-mark">PC</span>
@@ -1060,9 +1080,9 @@
               Tell us about your celebration. Our specialists will reach out
               personally.
             </p>
-            <form class="luxe-form" novalidate data-form="popup" id="ajax-header-contact-2">
+            <form class="luxe-form" method="post" novalidate data-form="popup" id="ajax-header-contact-2">
               <div class="field">
-                <input type="text" id="p-name" placeholder=" " name="name" required /><label
+                <input type="text" id="p-name" placeholder=" " name="name" autocomplete="name" required /><label
                   for="p-name"
                   >Full Name</label
                 ><span class="err"></span>
@@ -1075,11 +1095,12 @@
                   placeholder=" "
                   required
                   inputmode="tel"
+                  autocomplete="tel"
                 /><label for="p-phone">Phone Number</label
                 ><span class="err"></span>
               </div>
               <div class="field">
-                <input type="text" name="city" id="p-city" placeholder=" " required /><label
+                <input type="text" name="city" id="p-city" placeholder=" " autocomplete="address-level2" required /><label
                   for="p-city"
                   >City</label
                 ><span class="err"></span>

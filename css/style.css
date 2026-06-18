@@ -25,7 +25,7 @@
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%}
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%;scroll-padding-top:120px}
 body{
     margin:0;
     font-family:var(--ff-body);
@@ -45,13 +45,18 @@ h1,h2,h3,h4{overflow-wrap:break-word;word-wrap:break-word}
 
 .container-xxl{max-width:1320px;padding-inline:24px;margin-inline:auto}
 
+/* skip-to-content link (WCAG) */
+.skip-link{position:absolute;top:-60px;left:16px;z-index:10000;background:var(--gold);color:#1a1320;
+    font-family:var(--ff-accent);font-size:13px;font-weight:600;letter-spacing:1px;padding:10px 18px;border-radius:0 0 8px 8px;transition:top .3s var(--ease)}
+.skip-link:focus{top:0;outline:2px solid #fff;outline-offset:2px}
+
 /* ---------- TYPOGRAPHY HELPERS ---------- */
 .luxe-label{
     font-family:var(--ff-accent);
     font-size:14px;
     text-transform:uppercase;
     letter-spacing:4px;
-    color:var(--accent);
+    color:var(--gold);
     font-weight:600;
     display:inline-block;
     margin-bottom:18px;
@@ -101,8 +106,8 @@ h1,h2,h3,h4{overflow-wrap:break-word;word-wrap:break-word}
 
 .text-link{
     font-family:var(--ff-accent);font-weight:600;font-size:14px;letter-spacing:2px;
-    text-transform:uppercase;color:var(--plum);display:inline-flex;align-items:center;gap:9px;
-    border-bottom:1.5px solid var(--gold);padding-bottom:5px;
+    text-transform:uppercase;color:var(--plum);display:inline-flex;align-items:flex-end;gap:9px;
+    border-bottom:1.5px solid var(--gold);min-height:44px;padding-bottom:8px;
     transition:gap .4s var(--ease),color .4s;
 }
 .text-link:hover{gap:16px;color:var(--accent)}
@@ -149,14 +154,14 @@ h1,h2,h3,h4{overflow-wrap:break-word;word-wrap:break-word}
 }
 .brand-text{font-family:var(--ff-head);font-size:24px;color:#fff;letter-spacing:1px}
 .luxe-nav .nav-link{
-    font-family:var(--ff-accent);font-size:13px;letter-spacing:2px;text-transform:uppercase;
-    color:rgba(255,255,255,.82)!important;font-weight:500;margin:0 16px;position:relative;
+    font-family:var(--ff-accent);font-size:13px;letter-spacing:1.5px;text-transform:uppercase;
+    color:rgba(255,255,255,.82)!important;font-weight:500;margin:0 12px;position:relative;white-space:nowrap;
 }
 .luxe-nav .nav-link::after{
     content:"";position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--gold);transition:width .4s var(--ease);
 }
 .luxe-nav .nav-link:hover::after{width:100%}
-.nav-cta{padding:12px 26px}
+.nav-cta{padding:10px 20px;font-size:12px;white-space:nowrap;flex-shrink:0}
 .navbar-toggler{border:none;padding:8px;display:flex;flex-direction:column;gap:5px}
 .navbar-toggler:focus{box-shadow:none}
 .toggler-bar{width:26px;height:2px;background:#fff;transition:.3s}
@@ -298,7 +303,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;word-wrap:break-word}
 .loc-card.intl .loc-no{color:var(--accent)}
 .loc-cta{background:var(--plum);border:1px solid var(--gold);align-items:flex-start;cursor:default;box-shadow:0 18px 40px -22px rgba(201,168,106,.6)}
 .loc-cta .loc-name{color:#fff}
-.loc-link{font-family:var(--ff-accent);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);display:inline-flex;gap:8px;align-items:center;transition:gap .4s}
+.loc-link{font-family:var(--ff-accent);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);display:inline-flex;gap:8px;align-items:center;min-height:44px;transition:gap .4s}
 .loc-link:hover{gap:14px}
 
 /* =========================================================
@@ -335,7 +340,8 @@ h1,h2,h3,h4{overflow-wrap:break-word;word-wrap:break-word}
 }
 .badge-num{font-family:var(--ff-head);font-size:56px;line-height:1;font-weight:700}
 .badge-text{font-family:var(--ff-accent);font-size:11px;letter-spacing:2px;text-transform:uppercase;text-align:center;margin-top:4px}
-.expertise-content{padding:100px 70px 100px 90px;display:flex;flex-direction:column;justify-content:center}
+.expertise-content{padding:90px 56px;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.expertise-visual{min-width:0}
 .expertise-list{margin-top:20px}
 .expertise-list li{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.1)}
 .expertise-list li:last-child{border-bottom:none}
@@ -511,6 +517,10 @@ body.modal-open{overflow:hidden}
 @media (max-width:1199px){
     .hero-title{font-size:60px}
     .expertise-content{padding:80px 50px}
+    /* keep the navbar row from overflowing on small desktops */
+    .luxe-nav .nav-link{margin:0 8px;font-size:12px}
+    .nav-cta{padding:9px 16px}
+    .brand-text{font-size:21px}
 }
 @media (max-width:991px){
     body{font-size:17px}
@@ -539,6 +549,15 @@ body.modal-open{overflow:hidden}
     .popup-visual{height:180px;position:relative}
     .popup-visual img{position:relative}
     .counter{font-size:54px}
+}
+@media (max-width:768px){
+    .hero{padding:120px 0 60px}
+    .hero-title{font-size:42px}
+    .offering-row{gap:24px}
+    .expertise-content{padding:60px 24px}
+    .popup-body{padding:28px 24px}
+    .t-quote{font-size:24px}
+    .locations-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:575px){
     .hero-title{font-size:36px}
